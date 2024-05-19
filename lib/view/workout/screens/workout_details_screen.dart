@@ -202,7 +202,6 @@ class _WorkoutDetailsScreenState extends State<WorkoutDetailsScreen> {
       getUpdatedWorkoutSnapshot();
     } catch (error) {
       print('Ошибка при удалении упражнения: $error');
-      // Обработайте ошибку при удалении упражнения
     }
   }
 
@@ -230,7 +229,6 @@ class _WorkoutDetailsScreenState extends State<WorkoutDetailsScreen> {
       getUpdatedWorkoutSnapshot();
     } catch (error) {
       print('Ошибка при удалении упражнения: $error');
-      // Обработайте ошибку при удалении упражнения
     }
   }
 
