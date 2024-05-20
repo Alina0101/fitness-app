@@ -208,7 +208,7 @@ class _UserAccountScreenState extends State<UserAccountScreen> {
                         AuthButton(
                           onTap: () {
                             AuthController.signOut();
-                            Navigator.pop(context);
+                            Navigator.of(context).pushNamed('/');
                           },
                           buttonText: "Выйти из аккаунта",
                           textColor: MyColors.primary,
