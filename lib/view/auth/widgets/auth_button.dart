@@ -25,7 +25,7 @@ class AuthButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 65,
-        width: 370,
+        width: 300,
         decoration: BoxDecoration(
           color: backColor,
           gradient: gradient,

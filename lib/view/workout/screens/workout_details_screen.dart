@@ -267,7 +267,6 @@ class _WorkoutDetailsScreenState extends State<WorkoutDetailsScreen> {
 
     await WorkoutController.updateExercisesInWorkoutData(
         widget.workoutSnapshot["id"], workoutExercisesIds);
-
   }
 
   Future<void> sendWorkoutLink(String workoutId) async {
@@ -379,29 +378,31 @@ class _WorkoutDetailsScreenState extends State<WorkoutDetailsScreen> {
               completeExercise: completeExercise,
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                isStartOfWorkout = !isStartOfWorkout;
-              });
-              startWorkout();
-            },
-            style: ButtonStyle(
-              minimumSize:
-                  MaterialStateProperty.all(const Size(double.infinity, 50)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10.0),
-                    topRight: Radius.circular(10.0),
+          isUserRegistered
+              ? ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      isStartOfWorkout = !isStartOfWorkout;
+                    });
+                    startWorkout();
+                  },
+                  style: ButtonStyle(
+                    minimumSize: MaterialStateProperty.all(
+                        const Size(double.infinity, 50)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.0),
+                          topRight: Radius.circular(10.0),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            ),
-            child: isStartOfWorkout
-                ? const Text("ЗАКОНЧИТЬ ТРЕНИРОВКУ")
-                : const Text("НАЧАТЬ ТРЕНИРОВКУ"),
-          ),
+                  child: isStartOfWorkout
+                      ? const Text("ЗАКОНЧИТЬ ТРЕНИРОВКУ")
+                      : const Text("НАЧАТЬ ТРЕНИРОВКУ"),
+                )
+              : Container(),
         ],
       ),
     );
